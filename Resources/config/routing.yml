@@ -1,0 +1,3 @@
+alc_inter_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ALCInterBundle:Default:index }

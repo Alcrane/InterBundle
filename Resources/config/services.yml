@@ -1,0 +1,4 @@
+services:
+#    alc_inter.example:
+#        class: ALC\InterBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

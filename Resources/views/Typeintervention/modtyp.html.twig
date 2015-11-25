@@ -1,0 +1,26 @@
+{# Inter/src/ALC/InterBundle/Resources/views/Typeinter/modtyp.html.twig #}
+
+{% extends "ALCInterBundle::layout.html.twig" %}
+
+{% block alcinter_body %}
+
+  <h2>Modification d'un type d'inter</h2>
+
+   <div class="well">
+  {{ form(form) }}
+</div>
+  
+<p>
+    <a href="{{ path('alc_inter_gesttyp') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    
+   
+  </p>
+
+{% endblock %}
+
+        
+
+

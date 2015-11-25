@@ -1,0 +1,20 @@
+{# Inter/src/ALC/InterBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  Inter - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des interventions</h1>
+
+  <hr>
+
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+  {% block alcinter_body %}
+  {% endblock %}
+
+{% endblock %}

@@ -1,3 +1,69 @@
+#-- Inter/src/ALC/InterBundle/Resources/config/routing.yml
+
 alc_inter_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ALCInterBundle:Default:index }
+    path:     /{page}
+    defaults: { _controller: ALCInterBundle:Inter:index, page: 1 }
+    requirements:
+        page: \d*
+        
+#---------------------------------------
+#-- Geste des inters
+#---------------------------------------
+
+alc_inter_addinter:
+    path:     /add_inter
+    defaults: { _controller: ALCInterBundle:Inter:addinter }
+
+alc_inter_modinter:
+    path:     /mod_inter
+    defaults: { _controller: ALCInterBundle:Inter:modinter }
+    requirements:
+        id: \d*
+    
+#---------------------------------------
+#-- Geste des type d'inter
+#---------------------------------------
+
+alc_inter_gesttyp:
+    path:      /gest_typ
+    defaults:  { _controller: ALCInterBundle:Typeintervention:gesttyp }
+    
+alc_inter_modtyp:
+    path:      /mod_typ/{id}
+    defaults:  { _controller: ALCInterBundle:Typeintervention:modtyp }
+    requirements:
+        id: \d*
+
+alc_inter_addtyp:
+    path:      /add_typ
+    defaults:  { _controller: ALCInterBundle:Typeintervention:addtyp }
+
+alc_inter_deletetyp:
+    path:      /sup_typ/{id}
+    defaults:  { _controller: ALCInterBundle:Typeintervention:deletetyp }
+    requirements:
+        id: \d*
+
+#---------------------------------------
+#-- Gestion des sites
+#---------------------------------------
+
+alc_inter_gestsite:
+    path:      /gest_site
+    defaults:  { _controller: ALCInterBundle:Siteinter:gestsite }
+
+alc_inter_modsite:
+    path:      /mod_site/{id}
+    defaults:  { _controller: ALCInterBundle:Siteinter:modsite }
+    requirements:
+        id: \d*
+
+alc_inter_addsite:
+    path:      /add_site
+    defaults:  { _controller: ALCInterBundle:Siteinter:addsite }
+
+alc_inter_deletesite:
+    path:      /sup_site/{id}
+    defaults:  { _controller: ALCInterBundle:Siteinter:deletesite }
+    requirements:
+        id: \d*

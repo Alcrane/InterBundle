@@ -1,0 +1,69 @@
+{# Inter/src/ALC/InterBundle/Resources/views/Inter/index.html.twig #}
+
+{% extends "ALCInterBundle::layout.html.twig" %}
+
+{% block alcinter_body %}
+
+  <h2>Liste des Inter en cours</h2>
+
+   <a href="{{ path('alc_inter_addinter') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-right"></i>Ajouter une intervention
+  </a>
+      
+  <div class="CSSTableGenerator" >
+                <table >
+                    <tr>
+                        <td>
+                            Modifier
+                        </td>
+                        <td>
+                            Clôturer
+                        </td>
+                        <td>
+                            Num Inter
+                        </td>
+                        <td>
+                            Utilisateur
+                        </td>
+                        <td>
+                            Libéllé
+                        </td>
+                    </tr>
+                    {% for inter in listInters %}
+                    <tr>
+                        <td >
+                            <a href="{{ path('alc_inter_modinter', {'id': inter.id}) }}">
+         modifier
+        </a>
+                        </td>
+                         <td>
+                            Cloture
+                        </td>
+                        <td>
+                            {{inter.numinter}}
+                        </td>
+                        <td>
+                            {#{inter.nom_util}#}
+                        </td>
+                        <td>
+                            {{ inter.libinter }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+               
+            <a href="{{ path('alc_inter_addinter') }}" class="btn btn-default" >
+                <i class="glyphicon glyphicon-chevron-right"></i>Ajouter une intervention
+            </a>
+            
+    
+    
+   
+  </p>
+
+{% endblock %}
+
+        
+
+

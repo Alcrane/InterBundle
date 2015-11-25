@@ -1,0 +1,62 @@
+{# Inter/src/ALC/InterBundle/Resources/views/Inter/index.html.twig #}
+
+{% extends "ALCInterBundle::layout.html.twig" %}
+
+{% block alcinter_body %}
+
+  <h2>Gestion des types d'inter</h2>
+
+  <a href="{{ path('alc_inter_addtyp') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-right"></i>Ajouter un Type
+  </a>
+  
+  
+  
+  
+  <div class="CSSTableGenerator" >
+                <table >
+                    <tr>
+                        <td>
+                            Modifier
+                        </td>
+                        <td >
+                            Supprimer
+                        </td>
+                        <td>
+                            Libellé du type
+                        </td>
+                    </tr>
+                    {% for type in listType %}
+                    <tr>
+                        <td >
+                            <a href="{{ path('alc_inter_modtyp', {'id': type.id}) }}">
+         modifier
+        </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('alc_inter_deletetyp', {'id': type.id}) }}">
+         supprimer
+        </a>
+                        </td>
+                        <td>
+                            {{ type.libtyp }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+               
+            <a href="{{ path('alc_inter_addtyp') }}" class="btn btn-default" >
+                <i class="glyphicon glyphicon-chevron-right"></i>Ajouter un Type
+            </a>
+            
+    
+    
+   
+  </p>
+
+{% endblock %}
+
+        
+
+

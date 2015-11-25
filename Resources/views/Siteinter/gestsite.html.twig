@@ -1,0 +1,61 @@
+{# Inter/src/ALC/InterBundle/Resources/views/Inter/gestsite.html.twig #}
+
+{% extends "ALCInterBundle::layout.html.twig" %}
+
+{% block alcinter_body %}
+
+  <h2>Gestion des sites</h2>
+  <a href="{{ path('alc_inter_addsite') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-right"></i>Ajouter un site
+  </a>
+  
+  
+  
+  
+  <div class="CSSTableGenerator" >
+                <table >
+                    <tr>
+                        <td>
+                            Modifier
+                        </td>
+                        <td >
+                            Supprimer
+                        </td>
+                        <td>
+                            Adresse
+                        </td>
+                    </tr>
+                    {% for site in listSites %}
+                    <tr>
+                        <td >
+                            <a href="{{ path('alc_inter_modsite', {'id': site.id}) }}">
+         modifier
+        </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('alc_inter_deletesite', {'id': site.id}) }}">
+         supprimer
+        </a>
+                        </td>
+                        <td>
+                            {{ site.adresse }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+               
+            <a href="{{ path('alc_inter_addsite') }}" class="btn btn-default" >
+                <i class="glyphicon glyphicon-chevron-right"></i>Ajouter un site
+            </a>
+            
+    
+    
+   
+  </p>
+
+{% endblock %}
+
+        
+
+
